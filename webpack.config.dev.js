@@ -5,8 +5,8 @@ var srcRoot = './src';
 module.exports = {
   devtool: 'eval',
   entry: {
-    vendor: ['jquery', 'react', 'webpack-hot-middleware/client?http://localhost:3000'],
-    index: ['./src/index', 'webpack-hot-middleware/client?http://localhost:3000']
+    vendor: ['jquery', 'react', 'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr'],
+    index: ['./src/index', 'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr']
   },
   output: {
     path: path.join(__dirname, 'dist'),
