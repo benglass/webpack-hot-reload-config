@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import jQuery from 'jquery';
-import wut from './wut.css';
+import wut from 'wut.css';
 
 export default class App extends Component {
     render() {
