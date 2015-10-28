@@ -1,10 +1,11 @@
 var path = require('path');
 var webpack = require('webpack');
+var srcRoot = './src';
 
 module.exports = {
   devtool: 'eval',
   entry: {
-    vendor: ['jquery','react', 'webpack-hot-middleware/client?http://localhost:3000'],
+    vendor: ['jquery', 'react', 'webpack-hot-middleware/client?http://localhost:3000'],
     index: ['./src/index', 'webpack-hot-middleware/client?http://localhost:3000']
   },
   output: {
@@ -18,10 +19,16 @@ module.exports = {
     new webpack.NoErrorsPlugin()
   ],
   module: {
-    loaders: [{
-      test: /\.js$/,
-      loaders: ['babel'],
-      include: path.join(__dirname, 'src')
-    }]
+    loaders: [
+        {
+          test: /\.js$/,
+          loaders: ['babel'],
+          include: path.join(__dirname, 'src')
+        },
+        { test: /\.css$/, loader: 'style!css' }
+    ]
+  },
+  resolve: {
+      root: [path.resolve(srcRoot)]
   }
 };
