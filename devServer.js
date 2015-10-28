@@ -12,7 +12,6 @@ app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,
   publicPath: origPublicPath,
   hot: true,
-  // contentBase: "http://localhost:8000/",
   headers: { "Access-Control-Allow-Origin": "*" }
 }));
 
