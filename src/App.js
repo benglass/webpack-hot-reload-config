@@ -4,6 +4,6 @@ import wut from 'wut.css';
 
 export default class App extends Component {
     render() {
-        return <div>This is <strong>MY</strong> APP!!!!! How ?Where Who Wut now? OMG!!</div>
+        return <div>YES!!This is <strong>MY</strong> APP!!!!! How ?Where Who Wut now? OMG!!</div>
     }
 }
