@@ -5,7 +5,7 @@ var srcRoot = './src';
 module.exports = {
   devtool: 'eval',
   entry: {
-    vendor: ['jquery', 'react', 'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr'],
+    vendor: ['jquery', 'react', 'reflux', 'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr'],
     index: ['./src/index', 'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr']
   },
   output: {

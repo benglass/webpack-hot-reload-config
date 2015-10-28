@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
+import Reflux from 'reflux';
 import jQuery from 'jquery';
 import styles from 'styles.css';
+import actions from 'actions';
+import store from 'store';
 
 export default class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            counter: 1
-        };
+        this.state = store.getInitialState();
     }
+
     componentDidMount() {
+        store.listen(this.setState, this);
         setInterval(() => {
-            this.setState({ counter: this.state.counter + 1 });
+            actions.incrementCounter();
         }, 1000);
     }
 
     render() {
         return (
-            <div>Counter: {this.state.counter}</div>
+            <div>Count!!!: {this.state.counter}</div>
         )
     }
 }
