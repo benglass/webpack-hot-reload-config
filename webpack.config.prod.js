@@ -3,12 +3,13 @@ var webpack = require('webpack');
 
 module.exports = {
   devtool: 'source-map',
-  entry: [
-    './src/index'
-  ],
+  entry: {
+    vendor: 'jquery',
+    index:'./src/index'
+  },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].js',
     publicPath: '/static/'
   },
   plugins: [
@@ -22,6 +23,10 @@ module.exports = {
       compressor: {
         warnings: false
       }
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ["vendor"],
+      minChunks: Infinity
     })
   ],
   module: {
