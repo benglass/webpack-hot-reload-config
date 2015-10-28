@@ -10,9 +10,7 @@ var compiler = webpack(config);
 
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,
-  publicPath: origPublicPath,
-  hot: true,
-  headers: { "Access-Control-Allow-Origin": "*" }
+  publicPath: origPublicPath
 }));
 
 app.use(require('webpack-hot-middleware')(compiler));
