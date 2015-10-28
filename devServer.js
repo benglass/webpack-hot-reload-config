@@ -4,8 +4,8 @@ var webpack = require('webpack');
 var config = require('./webpack.config.dev');
 
 var app = express();
-var origPub = config.output.publicPath;
-config.output.publicPath = 'http://localhost:3000/static/';
+var origPublicPath = config.output.publicPath;
+config.output.publicPath = 'http://localhost:3000'+origPublicPath;
 var compiler = webpack(config);
 
 // Allow CORS requests
@@ -20,7 +20,7 @@ var compiler = webpack(config);
 
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,
-  publicPath: '/static/',
+  publicPath: origPublicPath,
   hot: true,
   // contentBase: "http://localhost:8000/",
   headers: { "Access-Control-Allow-Origin": "*" }
