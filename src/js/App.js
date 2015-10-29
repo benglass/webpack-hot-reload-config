@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Reflux from 'reflux';
 import jQuery from 'jquery';
-import styles from 'styles.css';
+import styles from 'style.scss';
 import actions from 'actions';
 import store from 'store';
 
@@ -20,7 +20,7 @@ export default class App extends Component {
 
     render() {
         return (
-            <div>Count!!!: {this.state.counter}</div>
+            <div>Count: {this.state.counter}</div>
         )
     }
 }

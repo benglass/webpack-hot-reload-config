@@ -1,12 +1,13 @@
 var path = require('path');
 var webpack = require('webpack');
-var srcRoot = './src';
+var jsRoot = './src/js';
+var scssRoot = './src/scss';
 
 module.exports = {
   devtool: 'eval',
   entry: {
     vendor: ['jquery', 'react', 'reflux', 'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr'],
-    index: ['./src/index', 'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr']
+    index: [jsRoot+'/index', 'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr']
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -29,10 +30,10 @@ module.exports = {
           loaders: ['babel'],
           include: path.join(__dirname, 'src')
         },
-        { test: /\.css$/, loader: 'style!css' }
+        { test: /\.scss/, loaders: ['style', 'css', 'sass'] }
     ]
   },
   resolve: {
-      root: [path.resolve(srcRoot)]
+      root: [path.resolve(jsRoot), path.resolve(scssRoot)]
   }
 };
