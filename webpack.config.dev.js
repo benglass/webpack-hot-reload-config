@@ -27,7 +27,7 @@ module.exports = {
     loaders: [
         {
           test: /\.js$/,
-          loaders: ['babel', 'source-map-loader'],
+          loaders: ['babel'],
           include: path.join(__dirname, 'src')
         },
         { test: /\.scss/, loaders: ['style', 'css?sourceMap', 'sass?sourceMap'] }
