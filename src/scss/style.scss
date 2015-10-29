@@ -1,5 +1,6 @@
-$primary-color: orange;
+@import 'variables';
 
 body {
     color: $primary-color;
+    font-weight: bold;
 }

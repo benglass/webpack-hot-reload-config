@@ -1,11 +1,12 @@
 var path = require('path');
 var webpack = require('webpack');
+var jsRoot = './src/js';
+var scssRoot = './src/scss';
 
 module.exports = {
-  devtool: 'source-map',
   entry: {
-    vendor: 'jquery',
-    index:'./src/index'
+    vendor: ['jquery', 'react', 'reflux'],
+    index: [jsRoot+'/index']
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -34,6 +35,12 @@ module.exports = {
       test: /\.js$/,
       loaders: ['babel'],
       include: path.join(__dirname, 'src')
+    },{ 
+      test: /\.scss/,
+      loaders: ['style', 'css', 'sass']
     }]
+  },
+  resolve: {
+    root: [path.resolve(jsRoot), path.resolve(scssRoot)]
   }
 };
