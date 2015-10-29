@@ -4,7 +4,7 @@ var jsRoot = './src/js';
 var scssRoot = './src/scss';
 
 module.exports = {
-  devtool: 'eval',
+  devtool: 'inline-source-map',
   entry: {
     vendor: ['jquery', 'react', 'reflux', 'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr'],
     index: [jsRoot+'/index', 'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr']
@@ -27,10 +27,10 @@ module.exports = {
     loaders: [
         {
           test: /\.js$/,
-          loaders: ['babel'],
+          loaders: ['babel', 'source-map-loader'],
           include: path.join(__dirname, 'src')
         },
-        { test: /\.scss/, loaders: ['style', 'css', 'sass'] }
+        { test: /\.scss/, loaders: ['style', 'css?sourceMap', 'sass?sourceMap'] }
     ]
   },
   resolve: {
