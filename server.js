@@ -3,7 +3,8 @@ var express = require('express');
 var webpack = require('webpack');
 var webpackConfig = require('./webpack.config.dev');
 var PORT = process.env.PORT || 3000;
-var URL = 'http://localhost:'+PORT;
+var HOST = process.env.HOST || 'localhost';
+var URL = 'http://'+HOST+':'+PORT;
 
 var app = express();
 
@@ -32,11 +33,11 @@ app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.listen(PORT, 'localhost', function(err) {
+app.listen(PORT, HOST, function(err) {
   if (err) {
     console.log(err);
     return;
   }
 
-  console.log('Listening at http://localhost:'+PORT);
+  console.log('Listening at '+URL);
 });
