@@ -3,7 +3,7 @@
 
 body {
     color: $primary-color;
-    font-weight: bold;
+    font-weight: normal;
     @include container(80em);
 }
 

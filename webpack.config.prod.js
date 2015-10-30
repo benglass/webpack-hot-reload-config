@@ -3,6 +3,10 @@ var webpack = require('webpack');
 var jsRoot = './src/js';
 var scssRoot = './src/scss';
 
+var definePlugin = new webpack.DefinePlugin({
+  __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true')),
+});
+
 module.exports = {
   entry: {
     vendor: ['jquery', 'react', 'reflux'],
@@ -29,7 +33,8 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       names: ["vendor"],
       minChunks: Infinity
-    })
+    }),
+    definePlugin
   ],
   module: {
     loaders: [{
