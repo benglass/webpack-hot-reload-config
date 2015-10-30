@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "A new Webpack boilerplate with hot reloading React components, and error handling on module and component level.",
   "scripts": {
-    "clean": "rimraf dist",
-    "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
-    "build": "npm run clean && npm run build:webpack",
+    "clean": "rimraf assets/js && rimraf assets/css",
+    "js:build": "NODE_ENV=production webpack --config webpack.config.prod.js",
+    "build": "npm run clean && npm run js:build && npm run css:build",
     "lint": "eslint src",
-    "sass:build": "node-sass src/scss -o assets/css --include-path node_modules && node bin/build-css.js",
-    "sass:watch": "node-sass -w src/scss -o assets/css --include-path node_modules"
+    "css:build": "node-sass src/scss -o assets/css --include-path node_modules && node bin/build-css.js",
+    "css:watch": "node-sass -w src/scss -o assets/css --include-path node_modules"
   },
   "repository": {
     "type": "git",

@@ -9,7 +9,7 @@ module.exports = {
     index: [jsRoot+'/index']
   },
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'assets/js'),
     filename: '[name].js',
     publicPath: '/assets/js/'
   },
