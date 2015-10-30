@@ -3,6 +3,9 @@ var webpack = require('webpack');
 var jsRoot = './src/js';
 var scssRoot = './src/scss';
 
+// Define a __DEV__ variable which can be used to add dev-only code
+// Anything wrapped in if (__DEV__) will be removed during production due to uglifyjs dead code removal 
+// since __DEV__ is transformed to the literal value false in production
 var definePlugin = new webpack.DefinePlugin({
   __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true')),
 });
