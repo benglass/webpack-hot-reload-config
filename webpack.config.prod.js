@@ -41,6 +41,12 @@ module.exports = {
     }]
   },
   resolve: {
-    root: [path.resolve(jsRoot), path.resolve(scssRoot)]
+    root: [
+        path.resolve(jsRoot),
+        path.resolve(scssRoot)
+    ]
+  },
+  sassLoader: {
+      includePaths: [path.resolve(__dirname, './node_modules')]
   }
 };

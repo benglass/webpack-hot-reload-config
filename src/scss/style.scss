@@ -1,7 +1,16 @@
 @import 'variables';
+@import 'susy/sass/susy';
 
 body {
     color: $primary-color;
     font-weight: bold;
     padding: 50px;
+}
+
+aside {
+    @include span(25%);
+}
+
+main {
+    @include span(75%);
 }
