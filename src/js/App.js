@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Reflux from 'reflux';
 import jQuery from 'jquery';
-import styles from 'style.scss';
 import actions from 'actions';
 import store from 'store';
 

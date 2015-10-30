@@ -8,9 +8,9 @@ body {
 }
 
 aside {
-    @include span(3 of 12);
+    @include span(6 of 12);
 }
 
 main {
-    @include span(9 of 12 last);
+    @include span(6 of 12 last);
 }

@@ -6,7 +6,8 @@ var scssRoot = './src/scss';
 module.exports = {
   entry: {
     vendor: ['jquery', 'react', 'reflux'],
-    index: [jsRoot+'/index']
+    index: [jsRoot+'/index'],
+    style: [scssRoot+'/style.scss']
   },
   output: {
     path: path.join(__dirname, 'assets/js'),
